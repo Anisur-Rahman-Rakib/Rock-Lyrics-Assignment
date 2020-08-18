@@ -121,7 +121,7 @@
             <div class="single-lyrics text-center">
                 <button class="btn go-back">&lsaquo;</button>
                 <h2 class="text-success mb-4">Pentatonix - Na Na Na</h2>
-                <pre id="displayLyrics" class="lyric text-white">
+                <pre id="displayLyrics" class="lyric text-white allHide ">
      Wont go whistling like the wind blows,
       Looking out my window,
          Just to see the shine
@@ -219,50 +219,69 @@
             </div>
             <!-- === Fancy results === -->
             <div class="search-result col-md-8 mx-auto py-4">
+
                 <!-- single result -->
+
                 <div class="single-result row align-items-center my-3 p-3">
                     <div class="col-md-9">
-                        <h3 class="lyrics-name">Purple Noon</h3>
-                        <p class="author lead">Album by <span>Washed Out</span></p>
+                        <h3 class="lyrics-name"id="song-tittle-11">Purple Noon</h3>
+                        <p class="author lead">Album by <span class="custom-color" id="song-album-11">Washed Out</span></p>
                     </div>
                     <div class="col-md-3 text-md-right text-center">
-                        <button class="btn btn-success">Get Lyrics</button>
+                        <button class="btn btn-success" id="songLyric-11">Get Lyrics</button>
                     </div>
                 </div>
+
+                <pre id="displayFulLyrics-11" class="allHide">    
+                </pre>
+
                 <!-- ./ single result -->
 
                 <!-- single result -->
+
                 <div class="single-result row align-items-center my-3 p-3">
                     <div class="col-md-9">
-                        <h3 class="lyrics-name">Purple Noon</h3>
-                        <p class="author lead">Album by <span>Washed Out</span></p>
+                        <h3 class="lyrics-name" id="song-tittle-12">Purple Noon</h3>
+                        <p class="author lead">Album by <span class="custom-color"id="song-album-12">Washed Out</span></p>
                     </div>
                     <div class="col-md-3 text-md-right text-center">
-                        <button class="btn btn-success">Get Lyrics</button>
+                        <button class="btn btn-success" id="songLyric-12">Get Lyrics</button>
                     </div>
                 </div>
+
+                <pre id="displayFulLyrics-12" class="allHide">    
+                </pre>
+
                 <!-- ./ single result -->
                 <!-- single result -->
                 <div class="single-result row align-items-center my-3 p-3">
                     <div class="col-md-9">
-                        <h3 class="lyrics-name">Purple Noon</h3>
-                        <p class="author lead">Album by <span>Washed Out</span></p>
+                        <h3 class="lyrics-name" id="song-tittle-13">Purple Noon</h3>
+                        <p class="author lead">Album by <span class="custom-color" id="song-album-13">Washed Out</span></p>
                     </div>
                     <div class="col-md-3 text-md-right text-center">
-                        <button class="btn btn-success">Get Lyrics</button>
+                        <button class="btn btn-success" id="songLyric-13">Get Lyrics</button>
                     </div>
                 </div>
+
+                <pre id="displayFulLyrics-13" class="allHide">    
+                </pre>
+
                 <!-- ./ single result -->
                 <!-- single result -->
                 <div class="single-result row align-items-center my-3 p-3">
                     <div class="col-md-9">
-                        <h3 class="lyrics-name">Purple Noon</h3>
-                        <p class="author lead">Album by <span>Washed Out</span></p>
+                        <h3 class="lyrics-name" id="song-tittle-14">Purple Noon</h3>
+                        <p class="author lead">Album by <span class="custom-color" id="song-album-14">Washed Out</span></p>
                     </div>
                     <div class="col-md-3 text-md-right text-center">
-                        <button class="btn btn-success">Get Lyrics</button>
+                        <button class="btn btn-success"id="songLyric-14">Get Lyrics</button>
                     </div>
                 </div>
+
+                <pre id="displayFulLyrics-14" class="allHide">    
+                </pre>
+
                 <!-- ./ single result -->
             </div>
 
@@ -277,132 +296,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <!-- Custom Script Here -->
-    <script>
-
-function fetchLyric(songName){
-    fetch(`https://api.lyrics.ovh/suggest/${songName}`)
-    .then( response => response.json())
-    .then(data => showResult(data))
-}
-document.getElementById('search-button').addEventListener('click' , function(){
-
-    const songName = document.getElementById('input-song').value;
-    fetchLyric(songName);
-})
-
-function  showResult(data){
-    console.log(data)
-    document.getElementById('song-tittle-1').innerText= data.data[0].title;
-    document.getElementById('song-album-1').innerText= data.data[0].artist.name;
-
-    document.getElementById('song-tittle-2').innerText= data.data[1].title;
-    document.getElementById('song-album-2').innerText= data.data[1].artist.name;
-
-    document.getElementById('song-tittle-3').innerText= data.data[2].title;
-    document.getElementById('song-album-3').innerText= data.data[2].artist.name;
-
-    document.getElementById('song-tittle-4').innerText= data.data[3].title;
-    document.getElementById('song-album-4').innerText= data.data[3].artist.name;
-
-    document.getElementById('song-tittle-5').innerText= data.data[4].title;
-    document.getElementById('song-album-5').innerText= data.data[4].artist.name;
-
-    document.getElementById('song-tittle-6').innerText= data.data[5].title;
-    document.getElementById('song-album-6').innerText= data.data[5].artist.name;
-
-    document.getElementById('song-tittle-7').innerText= data.data[6].title;
-    document.getElementById('song-album-7').innerText= data.data[6].artist.name;
-
-    document.getElementById('song-tittle-8').innerText= data.data[7].title;
-    document.getElementById('song-album-8').innerText= data.data[7].artist.name;
-
-    document.getElementById('song-tittle-9').innerText= data.data[8].title;
-    document.getElementById('song-album-9').innerText= data.data[8].artist.name;
-
-    document.getElementById('song-tittle-10').innerText= data.data[9].title;
-    document.getElementById('song-album-10').innerText= data.data[9].artist.name;
-}
-
-// function displayShowLyrics(){
-//     document.getElementById('displayFulLyrics-1').innerText = showLyrics;
-// document.getElementById("displayFulLyrics-1").style.display = "block"; 
-// }
-
-// document.getElementById('songLyric-1').addEventListener('click' , function(){
-//     let artistName = document.getElementById('song-album-1').innerText;
-//     let titleName = document.getElementById('song-tittle-1').innerText;
-//     fetch(`https://api.lyrics.ovh/v1/${artistName}/${titleName}`)
-//     .then( response => response.json())
-//     .then(data => {
-//         console.log(data)
-//         let showLyrics = data['lyrics'];
-       
-
-
-
-// document.getElementById('displayFulLyrics-1').innerText = showLyrics;                                    document.getElementById("displayFulLyrics-1").style.display = "block"; 
-
-
-//         document.getElementById('displayLyrics').innerText =showLyrics;
-//     })
-// })
-
-
-
-function ownTry(lyricId, artistId , titleId ,showLricId , showLyricIdBlock){
-    document.getElementById(lyricId).addEventListener('click' , function(){
-    let artistName = document.getElementById(artistId).innerText;
-    let titleName = document.getElementById(titleId).innerText;
-    fetch(`https://api.lyrics.ovh/v1/${artistName}/${titleName}`)
-    .then( response => response.json())
-    .then(data => {
-        console.log(data)
-        let showLyrics = data['lyrics'];
-       
-
-
-
-document.getElementById(showLricId).innerText = showLyrics;                                                  document.getElementById(showLyricIdBlock).style.display = "block"; 
-
-
-        document.getElementById('displayLyrics').innerText =showLyrics;
-    })
-})
-}
-ownTry('songLyric-1','song-album-1','song-tittle-1','displayFulLyrics-1','displayFulLyrics-1');
-
-// ownTry(songLyric-2 , song-album-2 , song-tittle-2 , displayFulLyrics-2 , displayFulLyrics-2);
-
-
-
-
-
-
-
-//   let para = document.createElement("pre");                 // Create a <p> element
-// para.innerHTML =` ${showLyrics} `;
-// document.getElementById("fullLyrics").appendChild(para); 
-        // old my file
-// let inputSongName = document.getElementById('input-song');
-// let searchButton = document.getElementById('search-button');
-
-// let songTittleOne = document.getElementById('song-tittle');
-// let songAlbumOne = document.getElementById('song-album');
-
-// searchButton.addEventListener("click" , function(){
-//    fetch("https://api.lyrics.ovh/suggest/summer")
-//   .then( response => response.json())
-//     .then( data  => {
-       
-//         let tittleValue = data.data[0].album.title;
-//         let albumValue = data.data[0].artist.name;
-
-//         songTittleOne.innerText = tittleValue;
-//         songAlbumOne.innerText = albumValue;
-//     })
-// })
-    </script>
-
+  
+<script src="custom.js"></script>
 </body>
-
 </html>
